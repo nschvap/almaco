@@ -2,7 +2,7 @@ import { useContext } from "react";
 import ReactSelect from "react-select";
 import { FilterContext } from "../contexts/FilterContext";
 
-const Nav = () => {
+const Nav = ({ show = false}) => {
   const {
     category,
     setCategory,
@@ -17,9 +17,9 @@ const Nav = () => {
   } = useContext(FilterContext);
 
   return (
-    <nav className="w-full flex justify-between items-center px-4 pt-4 relative z-[70]">
-      <div className="flex gap-x-4 items-center">
-        <div className="flex gap-x-2 items-center">
+    <nav className={`w-full flex-col lg:flex-row gap-y-8 justify-between items-center px-4 pt-4 relative z-[70] ${show ? "flex" : "hidden"}`}>
+      <div className="flex flex-col lg:flex-row gap-x-4 items-center">
+        <div className="flex gap-x-2 items-center flex-col lg:flex-row">
           <label htmlFor="orderby">Ordenar por</label>
           <ReactSelect
             id="orderby"
@@ -54,7 +54,7 @@ const Nav = () => {
             onChange={(e) => setSortBy(e)}
           />
         </div>
-        <div className="flex gap-x-2 items-center">
+        <div className="flex gap-x-2 items-center flex-col lg:flex-row">
           <label htmlFor="category">Categoria</label>
           <ReactSelect
             id="category"
@@ -94,7 +94,7 @@ const Nav = () => {
           />
         </div>
         {category.value != "recommended" && (
-          <div className="flex gap-x-2 items-center">
+          <div className="flex gap-x-2 items-center flex-col lg:flex-row">
             <label htmlFor="maxProducts">Productos Visibles</label>
             <ReactSelect
               id="maxProducts"

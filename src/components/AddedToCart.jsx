@@ -11,12 +11,12 @@ const AddedToCart = () => {
     >
       <div
         onClick={(e) => e.stopPropagation()}
-        className="max-w-lg w-full py-12 px-8 bg-zinc-800 rounded-lg flex items-center justify-center flex-col shadow-lg shadow-white/20 animate-jump-in"
+        className="md:max-w-lg mx-4 w-full py-6 md:py-12 px-8 bg-zinc-800 rounded-lg flex items-center justify-center flex-col shadow-lg shadow-white/20 animate-jump-in"
       >
-        <h2 className="text-white font-semibold text-xl">
+        <h2 className="text-white font-semibold text-xl text-center">
           ¡El producto se añadió correctamente al carrito!
         </h2>
-        <div className="mx-auto flex gap-x-4 items-center mt-4">
+        <div className="mx-auto flex flex-col md:flex-row gap-y-4 gap-x-4 items-center mt-4">
           <button
             onClick={() => {
               setShowMessage(false);

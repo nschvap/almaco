@@ -18,8 +18,8 @@ const Product = ({ product }) => {
         src={product.image || "https://via.placeholder.com/300x150/"}
         className="rounded-lg aspect-video object-contain bg-white p-5"
       />
-      <p className="text-lg font-semibold mt-2 line-clamp-1">{product.name}</p>
-      <p className="text-zinc-400 text-sm line-clamp-2 h-12">
+      <p className="text-lg font-semibold mt-2">{product.name}</p>
+      <p className="text-zinc-400 text-sm md:line-clamp-2 md:h-12">
         {product.description}
       </p>
       <p
@@ -37,7 +37,7 @@ const Product = ({ product }) => {
               onClick={() => {
                 removeProductFromCart(product, true);
               }}
-              className="w-full py-2 rounded-lg border-2 border-red-400 text-red-400 font-semibold bg-transparent hover:bg-red-400 hover:border-transparent hover:text-white hover:scale-110 duration-200"
+              className="w-full px-2 py-2 rounded-lg border-2 border-red-400 text-red-400 font-semibold bg-transparent hover:bg-red-400 hover:border-transparent hover:text-white hover:scale-110 duration-200 text-sm line-clamp-1"
             >
               Eliminar del carrito
             </button>
@@ -47,12 +47,12 @@ const Product = ({ product }) => {
                 addProductToCart(product);
                 if (!cart.hasOwnProperty(product.id)) setShowMessage(true);
               }}
-              className="w-full py-2 rounded-lg border-2 border-yellow-400 text-yellow-400 font-semibold bg-transparent hover:bg-yellow-400 hover:border-transparent hover:text-white hover:scale-110 duration-200"
+              className="w-full px-2 py-2 rounded-lg border-2 border-yellow-400 text-yellow-400 font-semibold bg-transparent hover:bg-yellow-400 hover:border-transparent hover:text-white hover:scale-110 duration-200 text-sm"
             >
               Añadir al carrito
             </button>
           )}
-          <button className="w-full py-2 rounded-lg border-2 border-transparent bg-green-400 text-white font-semibold hover:border-green-400 hover:text-green-400 hover:bg-transparent hover:scale-110 duration-200 focus:animate-wiggle">
+          <button className="w-full py-2 rounded-lg border-2 border-transparent bg-green-400 text-white font-semibold hover:border-green-400 hover:text-green-400 hover:bg-transparent hover:scale-110 duration-200 focus:animate-wiggle text-sm">
             Comprar
           </button>
         </div>

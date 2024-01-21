@@ -46,7 +46,7 @@ const ProductList = ({
   if (loading) return <h1>Cargando...</h1>;
 
   return (
-    <section className="grid grid-cols-4 place-items-center gap-y-6 gap-x-8 px-4">
+    <section className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 place-items-center gap-y-6 gap-x-8 md:px-4">
       {products
         .filter(filter)
         .filter(
